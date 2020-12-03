@@ -58,7 +58,7 @@ class App extends React.Component {
     });
   };
 
-  clearPurchased = (e) => {
+  clearCompleted = (e) => {
     e.preventDefault();
     this.setState({
       ...this.state,
@@ -74,7 +74,7 @@ class App extends React.Component {
         <TodoList
           list={this.state.list}
           toggleItem={this.toggleItem}
-          clearPurchased={this.clearPurchased}
+          clearCompleted={this.clearCompleted}
           />
       </div>
     );
