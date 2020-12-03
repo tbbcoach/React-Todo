@@ -25,15 +25,15 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      list
-    };
+      list: list
+  };
   }
   
   addItem = (e, item) => {
     console.log('adding item');
     e.preventDefault();
     const newItem = {
-      name: item,
+      task: item,
       completed: false,
       id: Date.now()
     };
