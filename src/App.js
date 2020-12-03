@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TodoForm from './components/TodoForm';
+
 const list = [
   {
     task: 'Organize Garage',
@@ -34,7 +36,7 @@ class App extends React.Component {
     };
     this.setState({
       ...this.state,
-      list: [...this.state, newItem]
+      list: [...this.state.list, newItem]
     });
   };
 
@@ -54,11 +56,20 @@ class App extends React.Component {
       })
     });
   };
+
+  clearPurchased = (e) => {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      list: this.state.list.filter((item) => !item.completed)
+    });
+  };
   
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoForm addItem={this.addItem} />
       </div>
     );
   }
