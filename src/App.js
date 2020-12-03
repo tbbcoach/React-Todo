@@ -3,6 +3,8 @@ import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
+import './components/Todo.css';
+
 const list = [
   {
     task: 'Organize Garage',
